@@ -1,0 +1,24 @@
+Hoisting
+jf W3 schools er hoisting:
+Hoisting is JavaScript's default behavior of moving declarations to the top (to the top of the current script or the current function)..
+In JavaScript, a variable can be declared after it has been used.
+In other words; a variable can be used before it has been declared.
+
+Eksempel på at erklære/declare:
+var x;
+Eksempel på at initiere
+var z = 5;
+initieringen bliver ikke flyttet til toppen - det betyder, at i følgende kode :
+
+var x = 5; // Initialize x
+
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x + " " + y;           // Display x and y
+
+var y = 7; // Initialize y
+Ved eksekveringen er x lig med 5 og y er undefined fordi y er initieret og ikke blot erklæret så den kunne blive hoisted.
+LÆRING og designregel:
+for at undgå udfordringer - så erklær variabler i toppen!
+To avoid bugs, always declare all variables at the beginning of every scope.
+Alternativ brug strict mode....
+JavaScript in strict mode does not allow variables to be used if they are not declared.
