@@ -74,3 +74,40 @@ I debuggeren ses alle de metoder som ligger i Object() og som ethvert objekt arv
 Et callback er et stykke eksekverbar kode som er passed som et argument til anden kode og som forventes at callback og 
 eksekvere kodestumpen. dette kan ske synkront og asynkront.
 
+8 - Function Closures and the JavaScript Module Pattern
+En Closure kombinerer en funktion med det miljø den er skrevet i.
+java - en variabel lever kun indtil final statement er afviklet i metoden.
+i javascript - bruger vi closures - en funktion returnerer en anden funktion der refererer til noget i den ydre funktion - 
+så kan den huske værdien af variablerne.
+Module pattern  
+her kan du lave private variabler
+bruges i factory i Angular
+bruges i Node i module exports
+
+9 - JavaScript prototyping
+Brug gerne array map tingen i Period1Callbacks til at forklare dette
+Hver konstruktør har en prototype property der refererer til et objekt og det objekt bliver prototype for alle de instanser 
+der bliver kreeret. Vi kan tilføje metoder og properties til denne prototype - herunder har vi et objekt Car og tilføjer en 
+metode showCar til objektets prototype. Alle instanser af dette objekt har nu mulighed for at anvende funktionen.
+function Car(make, model, year){
+this. make = make;
+this.model = model;
+this.year = year;
+}
+Car.prototype.showCar= function(){
+console.log("A beautyfull "+this.year+" "+this.model+" "+this.make)
+}
+//create instanses of Car
+var car1 = new Car("Volvo", "V70", 2005);
+car1.showCar();
+
+f. eks. Array - her ligger forEach som en del af 
+det objektet kan - og du kan tilføje til det ved at skrive Array.prototype.myForEach = myForEach
+OBS for arv eksemplet på prototype - prototype_inheritance.js
+
+
+10 - Generally about node.js and NPM
+
+
+11 - Examples of user defined reusable modules implemented in Node.js
+
