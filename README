@@ -1,0 +1,76 @@
+lle de specifikke spørgsmål kan besvares via projektet Period1Callbacks
+
+1 - Explain differences between Java and JavaScript. Include both topics related to the fact
+that Java is af compiled language and JavaScript a scripted language and generel differencies in features
+
+Java:
+Compiled language - er hurtigere end scripted language, fejl i syntaks vises før programmet afvikles, giver codecompletion, 
+er strongly typed hvilket betyder at en variabel ikke kan skifte type, opererer med klasser
+a strongly typed language is more likely to generate an error or refuse to compile if the argument passed to a function 
+does not closely match the expected type.
+Variabaler kan pege på objekter
+Objekter kan passes som parametre til metoder
+Objekter kan returneres fra metoder
+Vi kan bruges nestede klasser
+
+JavaScript:
+Loosely typed - a very weakly typed language may produce unpredictable results or may perform implicit type conversion
+fejlbeskeder først ved afvikling af programmet
+har ikke klasser frø ECMASCRIPT6
+objekter dannes ved at skrive var a = {fname: "Kurt"} eller via konstruktør var b = new Person()
+Variabler kan pege på funktioner
+Vi kan passe funktioner som parametre
+Vi kan returnere funktioner fra funktioner
+Vi kan have nestede funktioner
+
+
+2 - Explain the use of strict
+
+hvis man ikke anvender syntaksen var før variabelnavn når den erklæres bliver den til en global variabel.
+Use strict i toppen af din kode enten alene som  'use strict' eller i <script> tag forhindrer dette idet, at alle
+variabler skal erklæres før de anvendes...det er således ikke muligt at sige x=5; med mindre der tidligere er sat/erklæret en var x;
+
+3 - Variable/function hoisting
+
+Er defautl nårJavaScripts flytter erklæringer til toppen af koden/scope. Hoister kun erklæringen ikke initieringen
+
+det er altid en god regel at erklære varibaler i toppen for at undgå bugs.
+
+4 - this in JavaScript and how it differs from what we know from Jave/.net
+JavaScript - this - er objekter der ejer JavaScriptkoden. Værdien af this i en funktion er objektet der ejer funktonen.
+værdien af this i et objekt er objektet selv.
+keyword this i en konstruktør har ingen værdi, men er en erstatning for et nyt objekt der instantieres (new),
+hvorefter værdien bliver det nye objekt.
+binding er explicit
+Hvis du bruger this udenfor en funktion i koden refereres til dokumentet/window
+//purpose of methods call(), apply(), bind()
+    //apply (der tager en et array af argumenter) og call (der tager en liste af argumenter) er metoder til explicit binding..
+    .dvs sætte værdien af this
+
+Java - this - binding er implecit. Indenfor en instans, metode eller konstruktør er this en reference til det nuværende objekt
+- altså det objekt hvis metode eller konstruktør der er blevet kaldt. 
+du kan referere til ethvert medlem af nuværende objekt fra en instans, metode eller konstruktør med this.
+
+var self = this på 3. semester:
+selv er her brugt til at vedligeholde en reference til den original this selvom konteksten ændrer sig. Bliver ofte brugt i 
+eventhandlere og closures.
+
+
+5 - Immediately-invoked function expressions(IIFE
+Kan bruges til at undgå hoisting indenfor en kodeblok, beskytte mod forurening af koden og samtidig tillade public acces til metoder
+mens varibaler stadig er private i disse metoder....
+eksempel
+(function () {
+    var x = "Hello!!";      // I will invoke myself
+    console.log(x);
+})();
+bemærk her at der er parantes rundt om hele funktionen og den afsltutes med dobbelte paranteser() - det er på denne måde 
+du kan se at det er en IIFE.
+
+6 - Use the debugger to explain the basic things all objects inherits from object
+I debuggeren ses alle de metoder som ligger i Object() og som ethvert objekt arver.
+
+7 - user defined callback functions
+Et callback er et stykke eksekverbar kode som er passed som et argument til anden kode og som forventes at callback og 
+eksekvere kodestumpen. dette kan ske synkront og asynkront.
+
