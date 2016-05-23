@@ -107,7 +107,35 @@ OBS for arv eksemplet på prototype - prototype_inheritance.js
 
 
 10 - Generally about node.js and NPM
+En platform til at bygge nemme scalable netværks applikationer der er hurtige. Runtime environment and library 
+for running JavaScript outside the browser.
+Er event driven
+Har non blocking I/O model - letvægt og effektiv
+Til data intensive real time applikationer der afvikles på distribuerede services (mange servere)
+Based på Googles V8 engine
+Rettet mod asynkron programmering
+Nem at scalere
+Node kan anvendes på client, på server og på database - one in all...
+Perfekt til single page applications
+Egnet til applikationer med meget I/O, Real time programs, Web servere, REST servere, Streaming servere, Games
+IKKE egnet til CPU intensive applikationer
 
+NPM - Node Package Manager
+online repository hvor der er publiceret open source Node.js projekter
+Er udvidelser til Node som er udviklet af hvem som helst og kan anvendes frit - ligesom imports i Java
+Det er muligt at installere pakker både lokalt i det enkelte projekt og globalt på computeren
 
 11 - Examples of user defined reusable modules implemented in Node.js
+Reusable modules = module.exports i en js. fil og det betyder, at den funktion der er eksporteret kan anvendes i andre
+filer blot med require filen og bruge funktionen - se eksempel fra learnYouNode
+var printfiles = function() {
+    fs.readdir(path, function (err, list) {
+        list.forEach(function (file) {
+            if (path.extname(file) === '.' + process.argv[3])
+                console.log(file)
+        })
+    })
+}
+
+module.exports = printfiles();
 
